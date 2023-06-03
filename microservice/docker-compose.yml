@@ -1,0 +1,17 @@
+version: '3'
+services:
+  auth:
+    build:
+      context: .
+      dockerfile: Dockerfile.auth
+    networks: 
+      - pika5-mongodb-auth-docker_my-net
+  receive:
+    build:
+      context: .
+      dockerfile: Dockerfile.receive
+    networks: 
+      - pika5-mongodb-auth-docker_my-net
+networks: 
+  pika5-mongodb-auth-docker_my-net:
+    external: true

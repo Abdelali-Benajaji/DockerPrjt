@@ -1,0 +1,8 @@
+FROM python:3.9-slim-buster
+
+WORKDIR /app
+
+RUN pip install pika pyotp
+
+COPY auth.py .
+CMD python auth.py
